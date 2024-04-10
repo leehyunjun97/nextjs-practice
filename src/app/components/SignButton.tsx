@@ -4,6 +4,7 @@ import React from 'react';
 
 const SignButton = () => {
   const { data: session } = useSession();
+
   if (session && session?.user) {
     return (
       <button

@@ -1,3 +1,4 @@
+import { signJwtAccessToken } from '@/app/lib/jwt';
 import prisma from '@/app/lib/prisma';
 import * as bcrypt from 'bcrypt';
 
@@ -20,6 +21,14 @@ export async function POST(request: Request) {
   // 사용자의 password를 알아볼 필요 없이 compare함수로 비교
   if (user && (await bcrypt.compare(body.password, user.password))) {
     const { password, ...userWithoutPass } = user;
-    return new Response(JSON.stringify(userWithoutPass));
+
+    // user 정보에 jwt accessToken 로직 추가
+    const accessToken = signJwtAccessToken(userWithoutPass);
+    const result = {
+      ...userWithoutPass,
+      accessToken,
+    };
+
+    return new Response(JSON.stringify(result));
   } else return new Response(JSON.stringify(null));
 }
