@@ -16,8 +16,8 @@ const page = () => {
   };
 
   return (
-    <main className='flex min-h-screen flex-col items-center space-y-10 p-24'>
-      <h1 className='text-4xl font-semibold'>Login</h1>
+    <main className='flex min-h-screen flex-col items-center space-y-10 p-12'>
+      <h4 className='text-4xl font-semibold'>Login</h4>
       <div>
         <div>
           <label

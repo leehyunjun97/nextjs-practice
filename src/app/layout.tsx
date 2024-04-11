@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Providers from './components/Providers';
 import SignButton from './components/SignButton';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,10 +21,21 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <Providers>
+          {/* header 부분 */}
           <div className='flex justify-between'>
-            <span className='logo font-bold'>MONBlog</span>
-            <SignButton />
+            <Link href={'/'}>
+              <span className='logo font-bold'>MONBlog</span>
+            </Link>
+            <div className='flex justify-between'>
+              <Link href={'/userposts'}>
+                <span className='rounded-xl font-bold text-base mr-4'>
+                  Diary
+                </span>
+              </Link>
+              <SignButton />
+            </div>
           </div>
+
           <div className='outside'>{children}</div>
         </Providers>
       </body>
