@@ -21,7 +21,7 @@ export function signJwtAccessToken(
 
 // token 검증하는 함수
 
-export function verityJwt(token: string) {
+export function verifyJwt(token: string) {
   try {
     const secret_key = process.env.SECRET_KEY;
     const decoded = jwt.verify(token, secret_key!);

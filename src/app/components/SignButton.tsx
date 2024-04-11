@@ -8,19 +8,16 @@ const SignButton = () => {
   if (session && session?.user) {
     return (
       <button
-        className='rounded-xl border bg-red-300 px-12 py-4'
+        className='rounded-xl font-bold text-base'
         onClick={() => signOut()}
       >
-        Log Out
+        로그아웃
       </button>
     );
   }
   return (
-    <button
-      className='rounded-xl border bg-yellow-300 px-12 py-4'
-      onClick={() => signIn()}
-    >
-      LogIn
+    <button className='rounded-xl font-bold text-base' onClick={() => signIn()}>
+      로그인
     </button>
   );
 };

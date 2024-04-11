@@ -35,8 +35,22 @@ body {
 * {
   box-sizing: border-box;
 }
+
+body {
+  background-color: #fff8ef7a;
+  padding: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.outside {
+  border-top: 1.5px solid black;
+  height: 85vh;
+  margin-top: 5px;
+}
+
 html,
-body,
+/* body, */
 div,
 span,
 applet,

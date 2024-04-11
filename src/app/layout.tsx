@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Providers from './components/Providers';
+import SignButton from './components/SignButton';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +19,13 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className='flex justify-between'>
+            <span className='logo font-bold'>MONBlog</span>
+            <SignButton />
+          </div>
+          <div className='outside'>{children}</div>
+        </Providers>
       </body>
     </html>
   );

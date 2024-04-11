@@ -1,18 +1,18 @@
 'use client';
 import React, { useRef } from 'react';
-import { signIn } from 'next-auth/react'
+import { signIn } from 'next-auth/react';
 
 const page = () => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
   const handleSubmit = async () => {
-    const result = await signIn("credentials", {
+    const result = await signIn('credentials', {
       email: emailRef.current,
       password: passwordRef.current,
       redirect: true,
-      callbackUrl: '/'
-    })
+      callbackUrl: '/userposts',
+    });
   };
 
   return (
